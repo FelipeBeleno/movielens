@@ -2,6 +2,12 @@
 
 Una aplicación web moderna para explorar películas utilizando la API de The Movie Database (TMDB). Construida con React, TypeScript, Redux Toolkit y Framer Motion.
 
+## 🌐 Demo en Vivo
+
+**🔗 Aplicación desplegada**: [https://movielens-lwgj.vercel.app/](https://movielens-lwgj.vercel.app/)
+
+**📂 Repositorio**: [https://github.com/FelipeBeleno/movielens](https://github.com/FelipeBeleno/movielens)
+
 ## 🚀 Instalación y Ejecución
 
 ### Prerrequisitos
@@ -13,7 +19,7 @@ Una aplicación web moderna para explorar películas utilizando la API de The Mo
 
 1. **Clonar el repositorio**
 ```bash
-git clone <repository-url>
+git clone https://github.com/FelipeBeleno/movielens.git
 cd MovieLens
 ```
 
@@ -272,12 +278,27 @@ npm run lint     # Linting con ESLint
 npm run preview  # Preview del build
 ```
 
-## 🌟 Próximas Mejoras
+## 🚀 Despliegue
 
-- [ ] Búsqueda de películas
-- [ ] Filtros por género/año
-- [ ] Favoritos con localStorage
-- [ ] Modo claro/oscuro
-- [ ] Infinite scroll
-- [ ] PWA capabilities
-- [ ] Tests unitarios
+### Vercel (Automático)
+La aplicación se despliega automáticamente en **Vercel** con cada push a la rama principal.
+
+**URL de producción**: [https://movielens-lwgj.vercel.app/](https://movielens-lwgj.vercel.app/)
+
+#### Configuración de Variables de Entorno en Vercel:
+1. Ir a **Project Settings** → **Environment Variables**
+2. Agregar las siguientes variables:
+   ```
+   VITE_TMDB_BASE_URL=https://api.themoviedb.org/3
+   VITE_TMDB_API_KEY=tu_api_key_de_tmdb
+   VITE_TMDB_IMAGE_BASE_URL=https://image.tmdb.org/t/p
+   ```
+
+#### Proceso de Despliegue:
+- **Trigger**: Push automático desde GitHub
+- **Build Command**: `npm run build`
+- **Output Directory**: `dist`
+- **Node Version**: 18.x
+
+
+**Raul Felipe Beleño Acosta** - *Ingeniero de sistemas, Bogotá Colombia.* - *22/10/2025*

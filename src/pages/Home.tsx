@@ -32,7 +32,7 @@ const Home = () => {
                     🎥 MovieLens
                 </motion.h1>
 
-                {/* Botones de paginación */}
+                
                 <div className="flex justify-center items-center gap-4 mb-8">
                     <button
                         onClick={() => {
@@ -107,10 +107,8 @@ const Home = () => {
                     ))}
                 </motion.div>
 
-                {/* Indicador de carga */}
-                {isFetching && (
-                    <p className="text-center text-gray-400 mt-4 animate-pulse">Cargando página {paginate}...</p>
-                )}
+                
+               
             </div>
         </div>
     );

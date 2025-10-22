@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Suspense, lazy } from "react";
 import Navbar from "./components/layout/Navbar";
-import Loader from "./components/ui/Loader"; // Puedes usar tu loader aquí
+import Loader from "./components/ui/Loader"; 
 import NotFound from "./pages/NotFound";
 
 
