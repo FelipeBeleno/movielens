@@ -10,6 +10,7 @@ import { useNavigate } from "react-router-dom";
 import { useGetPopularMoviesQuery } from "../store/api/moviesApi";
 import Loader from "../components/ui/Loader";
 import { API_CONFIG } from "../utils/constants";
+import LazyImage from "../components/ui/LazyImage";
 
 const PopularMovies = () => {
 
@@ -29,7 +30,7 @@ const PopularMovies = () => {
                     loop
                     className="h-full rounded-2xl overflow-hidden shadow-lg"
                 >
-                    { movies !== undefined && movies.results.map((movie) => (
+                    {movies !== undefined && movies.results.map((movie) => (
                         <SwiperSlide key={movie.id}>
                             <motion.div
                                 onClick={() => {
@@ -40,12 +41,13 @@ const PopularMovies = () => {
                                 animate={{ opacity: 1 }}
                                 transition={{ duration: 0.8 }}
                             >
-                                <img
+
+                                <LazyImage
                                     src={`${API_CONFIG.IMAGE_BASE_URL}/original/${movie.backdrop_path}`}
                                     alt={movie.title}
                                     className="w-full h-full object-cover brightness-75"
-                                    loading="lazy"
                                 />
+
                                 <div className="absolute bottom-0 left-0 p-6 md:p-10 bg-gradient-to-t from-black/80 to-transparent w-full">
                                     <motion.h2
                                         className="text-2xl md:text-4xl font-bold mb-2"

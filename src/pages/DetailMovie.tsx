@@ -43,6 +43,9 @@ const DetailMovie = () => {
                 transition={{ duration: 0.6 }}
 
             >
+
+
+
                 <img
                     src={imageUrl}
                     alt={movie.title}
@@ -95,7 +98,7 @@ const DetailMovie = () => {
                             </span>
                         </div>
 
-                        {/* Nueva información adicional */}
+                        
                         <div className="space-y-2 mt-4 text-gray-300">
                             <div>
                                 <span className="font-semibold">Duración:</span> {movie.runtime} min

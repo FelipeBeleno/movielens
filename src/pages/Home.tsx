@@ -8,10 +8,11 @@ import { API_CONFIG } from '../utils/constants';
 import { useDispatch, useSelector } from 'react-redux';
 import { uploadPage } from '../store/movieSlice';
 import type { RootState } from "../store/store";
+import LazyImage from '../components/ui/LazyImage';
 
 const Home = () => {
 
-    const initializedPage =  useSelector((state: RootState) => state.movie.initializedPage);
+    const initializedPage = useSelector((state: RootState) => state.movie.initializedPage);
     const [paginate, setPaginate] = useState(initializedPage || 1);
     const { data, isFetching } = useGetMoviesQuery(paginate);
     const navigate = useNavigate();
@@ -32,7 +33,7 @@ const Home = () => {
                     🎥 MovieLens
                 </motion.h1>
 
-                
+
                 <div className="flex justify-center items-center gap-4 mb-8">
                     <button
                         onClick={() => {
@@ -81,11 +82,10 @@ const Home = () => {
                             whileHover={{ scale: 1.05 }}
                             className="bg-gray-800/80 backdrop-blur-sm rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 cursor-pointer"
                         >
-                            <img
-                                src={`${API_CONFIG.IMAGE_BASE_URL}/original/${movie.poster_path}`}
+                            <LazyImage
                                 alt={movie.title}
+                                src={`${API_CONFIG.IMAGE_BASE_URL}/original/${movie.poster_path}`}
                                 className="w-full h-72 object-cover"
-                                loading="lazy"
                             />
                             <div className="p-4 text-center space-y-2">
                                 <h2 className="text-lg font-semibold text-white">{movie.title}</h2>
@@ -107,8 +107,8 @@ const Home = () => {
                     ))}
                 </motion.div>
 
-                
-               
+
+
             </div>
         </div>
     );
